@@ -11,7 +11,8 @@ defmodule TermToJson.MixProject do
       elixir: "~> 1.17",
       deps: deps(),
       docs: docs(),
-      package: package()
+      package: package(),
+      description: "Convert terms to JSON and back"
     ]
   end
 

@@ -14,7 +14,7 @@ def deps do
 end
 ```
 
-TermToJson requires Erlang 27 or later.
+TermToJson requires Elixir 1.17 and Erlang 27 or later.
 
 ## Example
 ```elixir
