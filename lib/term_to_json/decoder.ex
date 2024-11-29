@@ -1,6 +1,6 @@
 defmodule TermToJson.Decoder do
-  @spec decode(binary(), keyword()) :: term()
-  def decode(json, opts \\ []) do
+  @spec decode(binary()) :: term()
+  def decode(json) do
     :json.decode(json, :ok, %{
       null: nil,
       string: fn
