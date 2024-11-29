@@ -21,5 +21,5 @@ defmodule TermToJson do
       iex> TermToJson.decode(~s({":major": 1,":minor": 3,":build": null,":__struct__": ":Elixir.Version",":pre": [],":patch": 7}))
       %Version{major: 1, minor: 3, patch: 7}
   """
-  defdelegate decode(string, opts \\ []), to: TermToJson.Decoder
+  defdelegate decode(string), to: TermToJson.Decoder
 end
