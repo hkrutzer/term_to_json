@@ -1,6 +1,6 @@
 # TermToJson
 
-Convert many Elixir data types, such as structs and tuples to JSON and back. Useful when you want to serialize data but also make it readable to external tools, such as in a SQL database or log file.
+Convert many Elixir data types, such as structs and tuples to JSON and back. Useful when you want to serialize data but also make it readable or queryable to external tools, such as in a SQL database or log file.
 
 ## Installation
 
@@ -38,3 +38,10 @@ TermToJson.decode(~s({":port":443,":scheme":"https",":path":"/",":host":"elixir-
 - **Don't use this library with untrusted input**
 - Not all data types are supported
 - When converting from JSON to a struct, whose definition has changed, issues may arise
+
+
+### Alternatives
+- `:erlang.term_to_binary/1` and `:erlang.binary_to_term/1`
+- [`Plug.Crypto.non_executable_binary_to_term`](https://hexdocs.pm/plug_crypto/Plug.Crypto.html#non_executable_binary_to_term/2)
+- [`Jason`](https://hex.pm/packages/jason)
+- [:json](https://www.erlang.org/doc/apps/stdlib/json.html)
