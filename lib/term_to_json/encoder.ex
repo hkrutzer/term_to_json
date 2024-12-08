@@ -6,6 +6,12 @@ defmodule TermToJson.Encoder do
         tuple, encoder when is_tuple(tuple) ->
           encoder.(["__tuple__" | Tuple.to_list(tuple)], encoder)
 
+        %DateTime{} = dt, encoder ->
+          DateTime.to_iso8601(dt) |> encoder.(encoder)
+
+        %Date{} = date, encoder ->
+          Date.to_iso8601(date) |> encoder.(encoder)
+
         nil, _encoder ->
           "null"
 

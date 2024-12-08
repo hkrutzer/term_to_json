@@ -7,6 +7,7 @@ defmodule TermToJsonTest do
     assert TermToJson.encode(%{1 => 2}) == ~s({"1":2})
     assert TermToJson.encode(%{3.1 => 4}) == ~s({"3.1":4})
     assert TermToJson.encode("hello\0world\t✂️") == ~s("hello\\u0000world\\t✂️")
+    assert TermToJson.encode(~U[2023-11-14 10:30:00Z]) == ~s("2023-11-14T10:30:00Z")
   end
 
   test "encoding / decoding" do
@@ -25,7 +26,8 @@ defmodule TermToJsonTest do
       ~r/^[[:alnum:][:blank:]]+$/,
       ~r/foo/uiU,
       MapSet.new(["a", "b"]),
-      {%{nested: ["data"]}}
+      {%{nested: ["data"]}},
+      ~U[2022-01-11 12:00:12.010809Z]
     ]
 
     for data <- test_data do
