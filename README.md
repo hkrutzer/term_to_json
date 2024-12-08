@@ -12,7 +12,7 @@ Add this to your dependencies in mix.exs.
 ```elixir
 def deps do
   [
-    {:term_to_json, "~> 0.1.0"}
+    {:term_to_json, "~> 0.1.1"}
   ]
 end
 ```
